@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  host: localhost
+
+development:
+  <<: *default
+  database: react-rails-test_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: react-rails-test_test
+
+staging:
+  <<: *default
+  database: react-rails-test_staging
+
+production:
+  <<: *default
+  database: react-rails-test_production
+
